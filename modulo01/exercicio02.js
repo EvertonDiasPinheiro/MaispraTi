@@ -72,3 +72,54 @@ const produto = {                                      // Criação do objeto pr
   
   console.log(resultado);
   
+//========================================================================================================
+
+//4. Iterando Sobre Arrays de Objetos
+
+const pessoas = [                                                // Array de objetos pessoas
+    { nome: "Everton", idade: 30, cidade: "Belem" },
+    { nome: "Maria", idade: 30, cidade: "Rio de Janeiro" },
+    { nome: "Carlos", idade: 28, cidade: "Belo Horizonte" }
+  ];
+  
+  
+  for (const pessoa of pessoas) {                                 // Iterando com for e of
+    console.log(`Nome: ${pessoa.nome}, Idade: ${pessoa.idade}, Cidade: ${pessoa.cidade}`);
+  }
+
+//===========================================================================================================
+
+//5. Calculando Valores em Arrays de Objetos
+  
+
+const alunos = [                                 // Array de objetos alunos
+    { nome: "Ana", nota1: 8, nota2: 7 },
+    { nome: "Everton", nota1: 6, nota2: 5 },
+    { nome: "Carla", nota1: 9, nota2: 10 }
+  ];
+  
+  
+  for (const aluno of alunos) {                                      // Iterando com for...of
+    const media = (aluno.nota1 + aluno.nota2) / 2;                      // Calculando a média
+    console.log(`Nome: ${aluno.nome}, Média: ${media.toFixed(2)}`); // Exibindo com 2 casas decimais
+  }
+
+//==============================================================================================================
+
+//6. Filtrando Arrays de Objetos
+  
+const funcionarios = [                                           // Array de objetos funcionarios
+    { nome: "Alice", cargo: "Gerente", salario: 7000 },
+    { nome: "Pedro", cargo: "Analista", salario: 4000 },
+    { nome: "Joana", cargo: "Desenvolvedora", salario: 9000 }
+  ];
+  
+  const valorMinimo = 5000;                                   // Salário mínimo para filtro
+  
+   
+  for (const funcionario of funcionarios) {                  // iterar com for...of
+    if (funcionario.salario > valorMinimo) {
+      console.log(`Nome: ${funcionario.nome}, Cargo: ${funcionario.cargo}, Salário: ${funcionario.salario}`);
+    }
+  }
+  
