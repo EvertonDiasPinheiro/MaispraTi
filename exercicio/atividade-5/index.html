@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold text-center mb-4">ToDoApp - Adicionar tarefas </h1>
+        <div class="mb-4">
+            <input id="task-input" type="text" placeholder="Add a new task..." class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button id="add-task" class="mt-2 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">adicionar tarefas </button>
+        </div>
+        <ul id="task-list" class="list-none space-y-2">
+            <!-- Tasks will be appended here dynamically -->
+        </ul>
+    </div>
+
+    <script>
+        const taskInput = document.getElementById('task-input');
+        const addTaskButton = document.getElementById('add-task');
+        const taskList = document.getElementById('task-list');
+
+        // Load tasks from localStorage
+        function loadTasks() {
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(task => renderTask(task));
+        }
+
+        // Save tasks to localStorage
+        function saveTasks() {
+            const tasks = Array.from(taskList.children).map(taskItem => ({
+                id: taskItem.dataset.id,
+                text: taskItem.querySelector('.task-text').textContent,
+                completed: taskItem.classList.contains('completed')
+            }));
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        // Render a task
+        function renderTask(task) {
+            const li = document.createElement('li');
+            li.dataset.id = task.id;
+            li.className = `flex justify-between items-center p-2 border rounded-md ${task.completed ? 'completed bg-green-100' : ''}`;
+
+            li.innerHTML = `
+                <span class="task-text flex-1 ${task.completed ? 'line-through text-gray-500' : ''}">${task.text}</span>
+                <div class="flex space-x-2">
+                    <button class="edit-task text-blue-500 hover:text-blue-700">Edita</button>
+                    <button class="delete-task text-red-500 hover:text-red-700">Excluir</button>
+                    <button class="toggle-completed text-green-500 hover:text-green-700">${task.completed ? 'desfazer' : 'concluir'}</button>
+                </div>
+            `;
+
+            // Edit task
+            li.querySelector('.edit-task').addEventListener('click', () => {
+                const newText = prompt('Edit task:', task.text);
+                if (newText) {
+                    li.querySelector('.task-text').textContent = newText;
+                    saveTasks();
+                }
+            });
+
+            // Delete task
+            li.querySelector('.delete-task').addEventListener('click', () => {
+                li.remove();
+                saveTasks();
+            });
+
+            // Toggle completed
+            li.querySelector('.toggle-completed').addEventListener('click', () => {
+                li.classList.toggle('completed');
+                li.querySelector('.task-text').classList.toggle('line-through');
+                li.querySelector('.task-text').classList.toggle('text-gray-500');
+                saveTasks();
+            });
+
+            taskList.appendChild(li);
+        }
+
+        // Add a new task
+        addTaskButton.addEventListener('click', () => {
+            const text = taskInput.value.trim();
+            if (text) {
+                const task = { id: Date.now().toString(), text, completed: false };
+                renderTask(task);
+                saveTasks();
+                taskInput.value = '';
+            }
+        });
+
+        // Initialize
+        loadTasks();
+    </script>
+</body>
+</html>
