@@ -14,4 +14,11 @@ Uma aplicação simples de lista de tarefas utilizando HTML, Tailwind CSS e Java
 ## Como executar o projeto
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU_USUARIO/todoapp-localstorage.git
+   git clone https://github.com/EvertonDiasPinheiro/MaispraTi/blob/master/exercicio/atividade-5/index.html
+
+2. Abra o arquivo index.html no navegador.
+   Tecnologias utilizadas
+   ```bash
+    . HTML
+    . CSS (Tailwind)
+    . JavaScript
