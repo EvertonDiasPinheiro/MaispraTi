@@ -1,0 +1,302 @@
+/* Reset */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Isso vai separar a logo da parte direita */
+    align-items: center; /* Isso vai alinhar verticalmente os itens */
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+}
+
+/* Logo à esquerda */
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Menu e CTA à direita */
+.header .right-side {
+    display: flex;
+    align-items: center; /* Alinha o menu e o botão na vertical */
+}
+
+.header .nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.header .nav ul li {
+    margin: 0 10px; /* Espaço entre os itens do menu */
+}
+
+.header .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.header .cta-button {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px; /* Espaço entre o menu e o botão CTA */
+}
+
+  
+  /* Banner */
+  .banner {
+    width: 100%;
+    position: relative;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Seções */
+  /* Seção "Sobre" */
+.about {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  
+/* Seção "Serviços" */
+.services {
+    background-color: #fff;
+    padding: 50px 20px;
+  }
+  
+  .services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .service-card {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .service-card p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+/* Seção "Testemunhos" */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  .testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .testimonial-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  
+
+/* Seção "Contato" */
+.contact {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .form-group textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  .cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+  #responseMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: green;
+  }
+  
+  
+ /* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer .footer-links {
+    margin-bottom: 15px;
+  }
+  
+  .footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1rem;
+  }
+  
+  .footer .footer-info a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+  
+  .footer p {
+    margin-top: 20px;
+    font-size: 0.8rem;
+  }
+  
+  /* Hover Effects */
+  .footer .footer-links a:hover,
+  .footer .footer-info a:hover {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="Logo">Everton<b>.</b></div>
+            <ul class="navItems">
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+                <li><a href="#">home</a></li>
+
+            </ul>
+
+            <div class="links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
+
+        <div class="wrapper">
+            <div class="coLs cols0">
+                <span class="topline">Hello</span>
+                <h1>I'm <span id="multiText"></span></h1>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. ex expedita neque ut, vitae, id in quam doloremque autem consequuntur aliquam ad impedit exercitationem?</p>
+                <div class="btns">
+                    <button>downloard cv</button>
+                    <button>hire me</button>
+                </div>
+            </div>
+            <div class="coLs cols1">
+                <div class="imgbox">
+                    <img src="img/splash.png"  id="splash">
+                    <img src="" >
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typingEffect = new Typed("#multiText", {
+        strings: ["coder", "youtuber", "designer"], // Corrigido de String para strings
+        loop: true, 
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1500 // Corrigido de backSpeed duplicado para backDelay
+      });
+    </script>
+
+    
+</body>
+</html>
